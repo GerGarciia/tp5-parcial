@@ -11,13 +11,16 @@ import * as esquema from "./esquema";
 import { BASE_DATOS_SEMILLA_B64 } from "./semilla-base64";
 
 let urlBaseDatos =
-  process.env.DATABASE_URL ||
   process.env.TURSO_DATABASE_URL ||
+  (process.env.DATABASE_URL && process.env.DATABASE_URL !== "file:./local.db"
+    ? process.env.DATABASE_URL
+    : undefined) ||
+  process.env.DATABASE_URL ||
   "file:./local.db";
 
 const tokenBaseDatos =
-  process.env.DATABASE_AUTH_TOKEN ||
-  process.env.TURSO_AUTH_TOKEN;
+  process.env.TURSO_AUTH_TOKEN ||
+  process.env.DATABASE_AUTH_TOKEN;
 
 // Si estamos en Vercel o en un entorno serverless y usando archivo SQLite local,
 // aseguramos que exista una base de datos con todas las tablas y datos sembrados en un directorio escribible:

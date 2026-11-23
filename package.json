@@ -4,7 +4,7 @@
   "private": true,
   "description": "Segundo parcial - Sistema de gestión comercial (facturación, stock y cuenta corriente)",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --webpack",
     "build": "next build --webpack",
     "start": "next start",
     "typecheck": "tsc --noEmit",
