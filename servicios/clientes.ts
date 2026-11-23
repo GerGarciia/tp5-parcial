@@ -53,7 +53,7 @@ import { leerPaginacion, respuestaPaginada, validar, type UsuarioSesion } from "
 const saldoCalculado = sql<number>`coalesce((
   select sum(case when ${movimientosCuenta.tipo} = 'debito' then ${movimientosCuenta.importe} else -${movimientosCuenta.importe} end)
   from ${movimientosCuenta}
-  where ${movimientosCuenta.clienteId} = ${clientes.id}
+  where ${movimientosCuenta.clienteId} = "clientes"."id"
 ), 0)`;
 
 /* ==========================================================================

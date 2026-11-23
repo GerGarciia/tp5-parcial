@@ -85,7 +85,7 @@ export async function registrarPago(
         422,
         "PAGO_SUPERA_DEUDA",
         "El importe del pago no puede superar el saldo adeudado.",
-        [{ saldoActual, importe: datos.importe }],
+        [{ campo: "importe", mensaje: "El importe supera el saldo adeudado." }],
       );
     }
 

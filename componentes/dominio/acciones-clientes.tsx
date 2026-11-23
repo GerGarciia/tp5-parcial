@@ -197,7 +197,7 @@ export function BotonNuevoCliente({
             )}
 
             <DialogFooter>
-              <Button variant="outline" onClick={() => setAbierto(false)}>
+              <Button type="button" variant="outline" onClick={() => setAbierto(false)}>
                 Cancelar
               </Button>
               <Button type="submit" disabled={enviando}>
@@ -226,6 +226,7 @@ export function BotonRegistrarPago({ cliente }: { cliente: ClientePublico }) {
     alTerminar: (recibo) => {
       setAbierto(false);
       router.push(`/clientes/recibos/${recibo.id}`);
+      router.refresh();
     },
   });
 
@@ -297,7 +298,7 @@ export function BotonRegistrarPago({ cliente }: { cliente: ClientePublico }) {
             </CampoFormulario>
 
             <DialogFooter>
-              <Button variant="outline" onClick={() => setAbierto(false)}>
+              <Button type="button" variant="outline" onClick={() => setAbierto(false)}>
                 Cancelar
               </Button>
               <Button type="submit" disabled={enviando}>
@@ -467,7 +468,7 @@ export function BotonesEditarCliente({ cliente }: { cliente: ClientePublico }) {
             )}
 
             <DialogFooter>
-              <Button variant="outline" onClick={() => setModalEditar(false)}>
+              <Button type="button" variant="outline" onClick={() => setModalEditar(false)}>
                 Cancelar
               </Button>
               <Button type="submit" disabled={enviando}>

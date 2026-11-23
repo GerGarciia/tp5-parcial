@@ -49,8 +49,15 @@ export function pesosACentavos(textoPesos: string): number | null {
   const limpio = textoPesos.trim().replace(/\$/g, "").replace(/\s/g, "");
   if (limpio === "") return null;
 
-  /* si el usuario escribió una coma, quitamos los puntos de miles y cambiamos la coma por punto para Number() */
-  const normalizado = limpio.includes(",") ? limpio.replace(/\./g, "").replace(",", ".") : limpio;
+  /* normalizamos el formato numérico soportando separador de miles argentino y decimales */
+  let normalizado: string;
+  if (limpio.includes(",")) {
+    normalizado = limpio.replace(/\./g, "").replace(",", ".");
+  } else if (/^\d{1,3}(\.\d{3})+$/.test(limpio)) {
+    normalizado = limpio.replace(/\./g, "");
+  } else {
+    normalizado = limpio;
+  }
   const pesos = Number(normalizado);
 
   /* si no es un número válido devolvemos null */

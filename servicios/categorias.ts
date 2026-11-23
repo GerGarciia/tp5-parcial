@@ -41,7 +41,7 @@ import { exigirAdmin, validar, type UsuarioSesion } from "./comunes";
    ========================================================================== */
 const cantidadProductosActivos = sql<number>`(
   select count(*) from ${productos}
-  where ${productos.categoriaId} = ${categorias.id} and ${productos.activo} = 1
+  where ${productos.categoriaId} = "categorias"."id" and ${productos.activo} = 1
 )`;
 
 /* ==========================================================================
