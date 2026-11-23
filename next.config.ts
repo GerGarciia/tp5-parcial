@@ -6,6 +6,7 @@ const configuracion: NextConfig = {
     ignoreBuildErrors: true,
   },
   serverExternalPackages: ["@libsql/client", "libsql"],
+  turbopack: {},
   webpack: (config, { isServer }) => {
     if (isServer) {
       config.externals = [...(config.externals || []), "@libsql/client", "libsql"];
