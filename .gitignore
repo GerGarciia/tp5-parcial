@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# Archivos temporales de SQLite
+local.db-*
+*.db-shm
+*.db-wal
+
+# Variables de entorno locales
+.env.local
+.env.*.local
+
+.vercel
