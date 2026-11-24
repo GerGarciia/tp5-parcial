@@ -7,6 +7,8 @@ Sistema comercial completo de punto de venta (mostrador) para un comercio minori
 ## 1. Integrantes y Publicación
 
 - **Alumno:** Germán Ariel García Núñez (Legajo **63204**)
+- **URL pública (Vercel):** https://tp5-parcial.vercel.app/
+- **Repositorio (GitHub):** https://github.com/GerGarciia/tp5-parcial
 - **Stack:** Next.js 16 (App Router + Route Handlers REST), TypeScript, Tailwind CSS v4, shadcn/ui, Chart.js (`react-chartjs-2`), Drizzle ORM (`drizzle-kit`), SQLite local / libSQL (Turso) en producción y Zod.
 
 ---

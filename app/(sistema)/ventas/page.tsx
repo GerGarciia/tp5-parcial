@@ -1,11 +1,10 @@
 // Pantalla de LISTADO DE FACTURAS (/ventas). RF-V8.
 import Link from "next/link";    /* llamamos a next */                                           
 import { ShoppingCart, Eye } from "lucide-react";
-import { db } from "@/basedatos/conexion";
-import { usuarios } from "@/basedatos/esquema";
 import { exigirUsuarioPagina } from "@/lib/sesion";
 import { listarFacturas } from "@/servicios/facturas";
 import { listarClientes } from "@/servicios/clientes";
+import { listarVendedoresParaFiltro } from "@/servicios/usuarios";
 import { formatearFechaHora, formatearMoneda } from "@/lib/formato";
 import { Button } from "@/componentes/ui/button";
 import { Card } from "@/componentes/ui/card";
@@ -48,7 +47,7 @@ export default async function PaginaFacturas({ searchParams }: Props) {
 
     /* PAGESIZE dice que solo debe traer como maximo 100 datos */
     listarClientes(usuario, { pageSize: "100" }),
-    db.select({ id: usuarios.id, nombre: usuarios.nombre }).from(usuarios),
+    listarVendedoresParaFiltro(usuario),
   ]);
 
   return (

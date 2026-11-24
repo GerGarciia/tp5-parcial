@@ -4,12 +4,14 @@ out/
 next-env.d.ts
 *.tsbuildinfo
 
-# Archivos temporales de SQLite
+# Base de datos SQLite local y archivos temporales
+local.db
 local.db-*
 *.db-shm
 *.db-wal
 
-# Variables de entorno locales
+# Variables de entorno locales (nunca subir secretos al repo; sí mantener .env.example)
+.env
 .env.local
 .env.*.local
 

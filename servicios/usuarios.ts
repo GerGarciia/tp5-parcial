@@ -37,6 +37,18 @@ import { aUsuarioPublico } from "./autenticacion";
 type ParametrosListado = { q?: string; activo?: string; page?: string; pageSize?: string };
 
 /* ==========================================================================
+   RF-V8: LISTAR VENDEDORES PARA FILTROS DE FACTURAS
+   ¿Para qué sirve? Devuelve solo id y nombre de los usuarios para poblar el filtro
+   de vendedores en /ventas sin exponer datos sensibles ni consultar la DB desde la página.
+   ========================================================================== */
+export async function listarVendedoresParaFiltro(_usuario: UsuarioSesion) {
+  return db
+    .select({ id: usuarios.id, nombre: usuarios.nombre })
+    .from(usuarios)
+    .orderBy(asc(usuarios.nombre));
+}
+
+/* ==========================================================================
    RF-U4: LISTAR USUARIOS (CON BÚSQUEDA Y PAGINACIÓN)
    ¿Para qué sirve? Muestra los empleados registrados en el sistema (administradores y vendedores).
    ¿Quién puede verlo? Exclusivo para administradores (exigirAdmin).
