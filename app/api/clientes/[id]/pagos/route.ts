@@ -1,4 +1,3 @@
-// POST /api/clientes/{id}/pagos (RF-C5).
 import { NextResponse, type NextRequest } from "next/server";
 import { conSesionApi, leerJsonPedido } from "@/lib/adaptadores";
 import { registrarPago } from "@/servicios/pagos";

@@ -1,4 +1,3 @@
-// POST /api/usuarios/{id}/reset-password (RF-U5, solo administrador).
 import { NextResponse, type NextRequest } from "next/server";
 import { conSesionApi } from "@/lib/adaptadores";
 import { restablecerContrasena } from "@/servicios/usuarios";

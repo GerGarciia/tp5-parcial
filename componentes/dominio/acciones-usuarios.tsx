@@ -1,9 +1,4 @@
 "use client";
-// Modales de gestión de usuarios (RF-U4 y RF-U5, solo administrador):
-// - Alta con contraseña temporal
-// - Edición de nombre, email y rol
-// - Restablecimiento de contraseña mostrando la clave temporal UNA SOLA VEZ
-// - Desactivación / reactivación con confirmación
 import { useState } from "react";
 import { Plus, Pencil, KeyRound, Power, Copy, Check } from "lucide-react";
 import { toast } from "sonner";
@@ -37,7 +32,6 @@ type UsuarioItem = {
   activo: boolean;
 };
 
-// ---------- Alta de usuario ----------
 export function BotonNuevoUsuario() {
   const [abierto, setAbierto] = useState(false);
   const [nombreUsuario, setNombreUsuario] = useState("");
@@ -143,7 +137,6 @@ export function BotonNuevoUsuario() {
   );
 }
 
-// ---------- Acciones por fila de usuario ----------
 export function AccionesFilaUsuario({
   usuario,
   idUsuarioActual,
@@ -223,7 +216,6 @@ export function AccionesFilaUsuario({
         {usuario.activo ? "Desactivar" : "Activar"}
       </Button>
 
-      {/* Modal Editar */}
       <Dialog open={modalEditar} onOpenChange={setModalEditar}>
         <DialogContent>
           <DialogHeader>
@@ -281,7 +273,6 @@ export function AccionesFilaUsuario({
         </DialogContent>
       </Dialog>
 
-      {/* Confirmación de desactivación */}
       <ModalConfirmacion
         abierto={modalEstado}
         alCambiarAbierto={setModalEstado}
@@ -296,7 +287,6 @@ export function AccionesFilaUsuario({
         alConfirmar={cambiarActivo}
       />
 
-      {/* Confirmación de restablecimiento de contraseña */}
       <ModalConfirmacion
         abierto={modalResetConfirmar}
         alCambiarAbierto={setModalResetConfirmar}
@@ -307,7 +297,6 @@ export function AccionesFilaUsuario({
         alConfirmar={ejecutarReset}
       />
 
-      {/* Muestra la contraseña temporal UNA SOLA VEZ */}
       <Dialog open={claveGenerada !== null} onOpenChange={(o) => !o && setClaveGenerada(null)}>
         <DialogContent>
           <DialogHeader>

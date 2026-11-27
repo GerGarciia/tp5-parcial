@@ -1,4 +1,3 @@
-// GET y PATCH /api/productos/{id} (RF-P1, RF-P2, RF-P3).
 import { NextResponse, type NextRequest } from "next/server";
 import { conSesionApi, leerJsonPedido } from "@/lib/adaptadores";
 import { editarProducto, obtenerProducto } from "@/servicios/productos";

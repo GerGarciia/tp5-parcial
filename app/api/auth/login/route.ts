@@ -1,5 +1,3 @@
-// POST /api/auth/login (RF-U1, única ruta pública).
-// Inicia sesión, devuelve el usuario conectado y graba la cookie httpOnly firmada.
 import { NextResponse, type NextRequest } from "next/server";
 import { leerJsonPedido, responderErrorApi } from "@/lib/adaptadores";
 import { firmarTokenSesion, NOMBRE_COOKIE_SESION, opcionesCookieSesion } from "@/lib/sesion";

@@ -1,5 +1,3 @@
-// Pantalla de MI PERFIL (/perfil). RF-U5.
-// Muestra los datos del usuario conectado y le permite cambiar su propia contraseña.
 import { exigirUsuarioPagina } from "@/lib/sesion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/componentes/ui/card";
 import { EncabezadoPagina } from "@/componentes/comunes/encabezado-pagina";

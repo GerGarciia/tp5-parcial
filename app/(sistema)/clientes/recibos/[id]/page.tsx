@@ -1,5 +1,3 @@
-// Pantalla de RECIBO DE PAGO (/clientes/recibos/[id]). RF-C5.
-// Comprobante numerado e imprimible de un pago registrado en cuenta corriente.
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Store } from "lucide-react";
@@ -25,7 +23,7 @@ type Props = { params: Promise<{ id: string }> };
 export default async function PaginaReciboPago({ params }: Props) {
   const usuario = await exigirUsuarioPagina();
   const { id } = await params;
-  
+
   let recibo;
   try {
     recibo = await obtenerPago(usuario, Number(id));

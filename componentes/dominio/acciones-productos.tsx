@@ -1,5 +1,4 @@
 "use client";
-// Modales de alta y edición de productos, baja lógica e ingresos/egresos de stock (RF-P2, RF-P3, RF-P4, RF-P5).
 import { useState } from "react";
 import { Plus, Pencil, ArrowUpCircle, ArrowDownCircle, Power } from "lucide-react";
 import { toast } from "sonner";
@@ -35,7 +34,6 @@ import type { ProductoPublico } from "@/servicios/productos";
 
 type CategoriaOpcion = { id: number; nombre: string };
 
-// ---------- Alta de nuevo producto ----------
 export function BotonNuevoProducto({ categorias }: { categorias: CategoriaOpcion[] }) {
   const [abierto, setAbierto] = useState(false);
   const [codigoProducto, setCodigoProducto] = useState("");
@@ -167,7 +165,6 @@ export function BotonNuevoProducto({ categorias }: { categorias: CategoriaOpcion
   );
 }
 
-// ---------- Ingreso o Egreso manual de stock (RF-P4 y RF-P5) ----------
 export function BotonesMovimientoStock({
   producto,
 }: {
@@ -286,7 +283,6 @@ export function BotonesMovimientoStock({
   );
 }
 
-// ---------- Edición y Baja lógica del producto ----------
 export function BotonesEditarProducto({
   producto,
   categorias,

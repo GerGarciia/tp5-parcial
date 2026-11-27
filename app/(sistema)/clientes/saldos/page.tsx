@@ -1,5 +1,3 @@
-// Pantalla de SALDOS DE CUENTAS CORRIENTES (/clientes/saldos). RF-C6.
-// Clientes con deuda ordenados de mayor a menor, con el total adeudado.
 import Link from "next/link";
 import { ArrowLeft, Eye } from "lucide-react";
 import { exigirUsuarioPagina } from "@/lib/sesion";

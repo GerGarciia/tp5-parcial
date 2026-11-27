@@ -1,4 +1,3 @@
-// GET y PATCH /api/clientes/{id} (RF-C2, RF-C3, RF-C7).
 import { NextResponse, type NextRequest } from "next/server";
 import { conSesionApi, leerJsonPedido } from "@/lib/adaptadores";
 import { editarCliente, obtenerCliente } from "@/servicios/clientes";

@@ -1,4 +1,3 @@
-// Pantalla de GESTIÓN DE USUARIOS (/usuarios). RF-U4 y RF-U5 (solo administrador).
 import { redirect } from "next/navigation";
 import { exigirUsuarioPagina } from "@/lib/sesion";
 import { listarUsuarios } from "@/servicios/usuarios";

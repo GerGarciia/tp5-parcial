@@ -1,4 +1,3 @@
-// Configuración de Next.js.
 import type { NextConfig } from "next";
 
 const configuracion: NextConfig = {

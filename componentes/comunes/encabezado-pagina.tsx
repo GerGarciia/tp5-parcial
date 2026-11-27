@@ -1,4 +1,3 @@
-// Encabezado reutilizable para todas las páginas (sección 10.6).
 import * as React from "react";
 import { Alinear, Apilar, Titulo, Texto } from "@/componentes/primitivas/maquetacion";
 

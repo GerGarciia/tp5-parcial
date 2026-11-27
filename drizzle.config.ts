@@ -1,4 +1,3 @@
-// Configuración de drizzle-kit: de dónde lee el esquema y dónde deja las migraciones.
 import "dotenv/config";
 import { defineConfig } from "drizzle-kit";
 

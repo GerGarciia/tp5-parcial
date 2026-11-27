@@ -1,4 +1,3 @@
-// Pantalla de CATEGORÍAS DE PRODUCTOS (/productos/categorias). RF-P7.
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { exigirUsuarioPagina } from "@/lib/sesion";

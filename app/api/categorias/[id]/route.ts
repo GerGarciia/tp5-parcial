@@ -1,4 +1,3 @@
-// PATCH /api/categorias/{id} (RF-P7, solo administrador).
 import { NextResponse, type NextRequest } from "next/server";
 import { conSesionApi, leerJsonPedido } from "@/lib/adaptadores";
 import { editarCategoria } from "@/servicios/categorias";

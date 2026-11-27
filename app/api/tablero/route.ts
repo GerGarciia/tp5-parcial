@@ -1,4 +1,3 @@
-// GET /api/tablero (RF-T1 a RF-T3).
 import { NextResponse } from "next/server";
 import { conSesionApi } from "@/lib/adaptadores";
 import { obtenerTablero } from "@/servicios/tablero";

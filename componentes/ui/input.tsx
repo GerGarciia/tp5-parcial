@@ -1,4 +1,3 @@
-// Componente Input de shadcn/ui.
 import * as React from "react";
 import { cn } from "@/lib/utils";
 

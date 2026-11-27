@@ -1,8 +1,4 @@
 "use client";
-// Panel lateral fijo y barra superior compartidos por todas las pantallas autenticadas (sección 4 y 8).
-// - En pantallas chicas (desde 360 px) el panel lateral se colapsa en un menú desplegable.
-// - Resalta el módulo activo.
-// - Oculta el módulo "Usuarios" si el rol es vendedor (y además el servidor verifica el rol).
 import * as React from "react";
 import { useState } from "react";
 import Link from "next/link";
@@ -155,12 +151,10 @@ export function EstructuraAplicacion({
 
   return (
     <Caja className="min-h-screen flex bg-background">
-      {/* Panel lateral fijo en escritorio */}
       <aside className="hidden md:flex md:w-60 md:shrink-0 md:flex-col border-r border-border bg-card no-imprimir">
         {contenidoMenu}
       </aside>
 
-      {/* Menú colapsable en pantallas chicas (360px+) */}
       {menuMovilAbierto && (
         <Caja className="fixed inset-0 z-50 flex md:hidden no-imprimir">
           <Caja
@@ -182,7 +176,6 @@ export function EstructuraAplicacion({
         </Caja>
       )}
 
-      {/* Columna principal: barra superior + contenido */}
       <Caja className="flex flex-1 flex-col min-w-0">
         <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-border bg-card/95 px-4 backdrop-blur-xs md:px-6 no-imprimir">
           <Alinear className="gap-2">

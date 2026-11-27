@@ -1,5 +1,4 @@
 "use client";
-// Modales de alta, edición y activación/desactivación de categorías (RF-P7).
 import { useState } from "react";
 import { Plus, Pencil, Power } from "lucide-react";
 import { toast } from "sonner";

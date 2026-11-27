@@ -1,5 +1,4 @@
 "use client";
-// Botón para imprimir comprobantes de factura y recibos de pago.
 import { Printer } from "lucide-react";
 import { Button } from "@/componentes/ui/button";
 

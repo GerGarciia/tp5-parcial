@@ -1,7 +1,4 @@
 "use client";
-// Gráficos del tablero de inicio con Chart.js y react-chartjs-2 (RF-T2, sección 9).
-// 1. Ventas diarias de los últimos 30 días (siempre 30 puntos, sin huecos).
-// 2. Ventas del mes en curso por forma de pago.
 import {
   Chart as ChartJS,
   CategoryScale,

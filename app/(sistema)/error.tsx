@@ -1,5 +1,4 @@
 "use client";
-// Estado de error automático de Next.js cuando falla una pantalla (sección 8).
 import Link from "next/link";
 import { EstadoError } from "@/componentes/comunes/estados";
 import { Button } from "@/componentes/ui/button";

@@ -1,8 +1,3 @@
-// Script de verificación de invariantes ("pnpm run db:verificar").
-// Comprueba los puntos de la sección 10.8:
-// - Que la existencia de CADA producto coincida con la suma de sus movimientos de stock.
-// - Que ningún producto tenga existencia negativa.
-// - Que el saldo de CADA cliente coincida con débitos menos créditos y no sea negativo.
 import "dotenv/config";
 import { eq, sql } from "drizzle-orm";
 import { db } from "./conexion";

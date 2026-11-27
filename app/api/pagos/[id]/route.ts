@@ -1,4 +1,3 @@
-// GET /api/pagos/{id} (RF-C5).
 import { NextResponse, type NextRequest } from "next/server";
 import { conSesionApi } from "@/lib/adaptadores";
 import { obtenerPago } from "@/servicios/pagos";

@@ -1,4 +1,3 @@
-// Componentes reutilizables para los estados de carga, vacío y error (secciones 8 y 10.6).
 import * as React from "react";
 import { AlertCircle, Inbox, Loader2 } from "lucide-react";
 import { Apilar, Alinear, Texto, Titulo } from "@/componentes/primitivas/maquetacion";

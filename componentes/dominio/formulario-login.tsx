@@ -1,6 +1,4 @@
 "use client";
-// Formulario de inicio de sesión (RF-U1).
-// Consume POST /api/auth/login y comparte el esquema de Zod "esquemaLogin".
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Store, LogIn } from "lucide-react";

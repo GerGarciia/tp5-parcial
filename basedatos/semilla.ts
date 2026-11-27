@@ -1,10 +1,3 @@
-// Script de datos iniciales ("pnpm run db:seed").
-// Cumple las secciones 8 y 10.7:
-// - Carga al menos 2 usuarios (uno por rol), 5 categorías, 30 productos, 10 clientes
-//   y más de 50 facturas repartidas en los últimos 30 días.
-// - Usa LOS MISMOS SERVICIOS que la aplicación para crear productos, movimientos,
-//   clientes, facturas, anulaciones y pagos: así el stock, los saldos y la numeración
-//   cumplen todas las reglas de negocio.
 import "dotenv/config";
 import bcrypt from "bcryptjs";
 import { db } from "./conexion";
@@ -39,7 +32,6 @@ export async function sembrarBaseDatos() {
   await db.delete(clientes);
   await db.delete(usuarios);
 
-  // 1. Usuarios (RF-U3: primer administrador + vendedores).
   console.log("Creando usuarios de prueba...");
   const hashAdmin = await bcrypt.hash("admin1234", 10);
   const hashVendedor = await bcrypt.hash("vendedor1234", 10);
@@ -96,7 +88,6 @@ export async function sembrarBaseDatos() {
     rol: "vendedor",
   };
 
-  // 2. Categorías (6 categorías).
   console.log("Creando categorías...");
   const nombresCategorias = [
     "Herramientas",
@@ -112,7 +103,6 @@ export async function sembrarBaseDatos() {
     mapaCategorias.set(nombreCat, creada.id);
   }
 
-  // 3. Productos (30 productos con stock inicial amplio; 4 quedarán bajo mínimo al final).
   console.log("Creando 30 productos con stock inicial...");
   const fechaHace32Dias = new Date(Date.now() - 32 * 86_400_000);
   const catalogoInicial = [
@@ -120,19 +110,19 @@ export async function sembrarBaseDatos() {
     { codigo: "HE-002", descripcion: "Destornillador Phillips PH2 imantado", cat: "Herramientas", precio: 480000, min: 8, inicial: 60 },
     { codigo: "HE-003", descripcion: "Pinza universal aislada 8 pulgadas", cat: "Herramientas", precio: 1420000, min: 5, inicial: 40 },
     { codigo: "HE-004", descripcion: "Llave francesa ajustable 10 pulgadas", cat: "Herramientas", precio: 1890000, min: 4, inicial: 35 },
-    { codigo: "HE-005", descripcion: "Cinta métrica 5 m autofrenante", cat: "Herramientas", precio: 760000, min: 10, inicial: 8 }, // bajo mínimo
+    { codigo: "HE-005", descripcion: "Cinta métrica 5 m autofrenante", cat: "Herramientas", precio: 760000, min: 10, inicial: 8 },
     { codigo: "HE-006", descripcion: "Sierra manual arco profesional 12 pulgadas", cat: "Herramientas", precio: 1150000, min: 5, inicial: 30 },
     { codigo: "EL-001", descripcion: "Cinta aisladora PVC 20 m negra", cat: "Electricidad", precio: 190000, min: 15, inicial: 120 },
     { codigo: "EL-002", descripcion: "Lámpara LED 12 W luz fría E27", cat: "Electricidad", precio: 320000, min: 20, inicial: 140 },
     { codigo: "EL-003", descripcion: "Llave térmica bipolar 2x25 A DIN", cat: "Electricidad", precio: 1650000, min: 6, inicial: 50 },
     { codigo: "EL-004", descripcion: "Disyuntor diferencial 2x40 A 30 mA", cat: "Electricidad", precio: 4200000, min: 4, inicial: 25 },
-    { codigo: "EL-005", descripcion: "Alargue zapatilla 5 tomas con térmica 3 m", cat: "Electricidad", precio: 1380000, min: 8, inicial: 5 }, // bajo mínimo
+    { codigo: "EL-005", descripcion: "Alargue zapatilla 5 tomas con térmica 3 m", cat: "Electricidad", precio: 1380000, min: 8, inicial: 5 },
     { codigo: "EL-006", descripcion: "Cable unipolar 2,5 mm rollo x 10 m", cat: "Electricidad", precio: 1540000, min: 6, inicial: 45 },
     { codigo: "PL-001", descripcion: "Cinta de teflón alta densidad 3/4 x 10 m", cat: "Plomería", precio: 140000, min: 20, inicial: 110 },
     { codigo: "PL-002", descripcion: "Flexible mallado acero 1/2 x 40 cm", cat: "Plomería", precio: 690000, min: 10, inicial: 55 },
     { codigo: "PL-003", descripcion: "Llave esférica bronce 3/4 paso total", cat: "Plomería", precio: 1950000, min: 6, inicial: 35 },
     { codigo: "PL-004", descripcion: "Sifón doble extensible PVC bajo mesada", cat: "Plomería", precio: 840000, min: 6, inicial: 40 },
-    { codigo: "PL-005", descripcion: "Sellador silicona neutra transparente 280 ml", cat: "Plomería", precio: 920000, min: 10, inicial: 6 }, // bajo mínimo
+    { codigo: "PL-005", descripcion: "Sellador silicona neutra transparente 280 ml", cat: "Plomería", precio: 920000, min: 10, inicial: 6 },
     { codigo: "PI-001", descripcion: "Látex interior blanco mate balde 4 L", cat: "Pinturería", precio: 2680000, min: 6, inicial: 40 },
     { codigo: "PI-002", descripcion: "Rodillo lana sintética 22 cm antigota", cat: "Pinturería", precio: 720000, min: 10, inicial: 55 },
     { codigo: "PI-003", descripcion: "Pincel virola nº 20 cerda blanca", cat: "Pinturería", precio: 410000, min: 12, inicial: 70 },
@@ -144,7 +134,7 @@ export async function sembrarBaseDatos() {
     { codigo: "BU-004", descripcion: "Disco de corte metal 115 x 1,0 mm", cat: "Bulonería y fijaciones", precio: 260000, min: 25, inicial: 130 },
     { codigo: "BU-005", descripcion: "Adhesivo epoxi bicomponente 10 min", cat: "Bulonería y fijaciones", precio: 810000, min: 8, inicial: 50 },
     { codigo: "SE-001", descripcion: "Guantes moteados algodón par", cat: "Seguridad industrial", precio: 240000, min: 20, inicial: 110 },
-    { codigo: "SE-002", descripcion: "Antiparras policarbonato transparentes", cat: "Seguridad industrial", precio: 560000, min: 10, inicial: 6 }, // bajo mínimo
+    { codigo: "SE-002", descripcion: "Antiparras policarbonato transparentes", cat: "Seguridad industrial", precio: 560000, min: 10, inicial: 6 },
     { codigo: "SE-003", descripcion: "Protector auditivo endoaural con cordón", cat: "Seguridad industrial", precio: 310000, min: 15, inicial: 70 },
   ];
 
@@ -165,7 +155,6 @@ export async function sembrarBaseDatos() {
     productosCreados.push(prod);
   }
 
-  // Un egreso manual por rotura y un ingreso por reposición para que el historial tenga todos los tipos.
   await registrarMovimientoManual(
     sesionAdmin,
     productosCreados[0].id,
@@ -179,7 +168,6 @@ export async function sembrarBaseDatos() {
     { fecha: new Date(Date.now() - 12 * 86_400_000) },
   );
 
-  // 4. Clientes (10 clientes: 7 con cuenta corriente habilitada y 3 solo contado/tarjeta).
   console.log("Creando 10 clientes...");
   const listaClientes = [
     { tipoDoc: "DNI" as const, nroDoc: "28.456.123", nombre: "Mariana López", domicilio: "Las Heras 455", telefono: "381 455-2210", email: "mariana.lopez@correo.test", cuentaCorriente: true, limiteCredito: 40000000 },
@@ -200,14 +188,12 @@ export async function sembrarBaseDatos() {
     clientesCreados.push(cli);
   }
 
-  // 5. Facturas: 54 ventas repartidas en los últimos 30 días + 1 anulada y pagos en cuenta corriente.
   console.log("Emitiendo 54 facturas en los últimos 30 días...");
   const vendedores = [sesionAdmin, sesionPablo, sesionSofia];
   const indicesProductosRotacion = [0, 1, 2, 3, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 29];
 
   const ahora = Date.now();
   for (let i = 0; i < 50; i++) {
-    // Repartimos desde hace 29 días hasta hoy (las últimas 3 caen en hoy).
     const diasAtras = i >= 47 ? 0 : 29 - Math.floor((i * 29) / 47);
     const fechaVenta = new Date(ahora - diasAtras * 86_400_000 - ((i % 5) + 1) * 3_600_000);
     const vendedor = vendedores[i % vendedores.length];
@@ -247,11 +233,10 @@ export async function sembrarBaseDatos() {
     );
   }
 
-  // 4 ventas en cuenta corriente y pagos parciales para dejar 3 clientes con saldo pendiente.
   const fCuenta1 = await emitirFactura(
     sesionPablo,
     {
-      clienteId: clientesCreados[0].id, // Mariana López
+      clienteId: clientesCreados[0].id,
       items: [
         { productoId: productosCreados[0].id, cantidad: 1 },
         { productoId: productosCreados[6].id, cantidad: 2 },
@@ -271,7 +256,7 @@ export async function sembrarBaseDatos() {
   await emitirFactura(
     sesionAdmin,
     {
-      clienteId: clientesCreados[1].id, // Constructora del Norte SRL
+      clienteId: clientesCreados[1].id,
       items: [
         { productoId: productosCreados[9].id, cantidad: 1 },
         { productoId: productosCreados[17].id, cantidad: 1 },
@@ -284,14 +269,13 @@ export async function sembrarBaseDatos() {
   await emitirFactura(
     sesionSofia,
     {
-      clienteId: clientesCreados[2].id, // Ricardo Gómez
+      clienteId: clientesCreados[2].id,
       items: [{ productoId: productosCreados[3].id, cantidad: 1 }],
       pago: { forma: "cuenta_corriente" },
     },
     { fecha: new Date(ahora - 2 * 86_400_000) },
   );
 
-  // Una factura emitida y luego anulada por el administrador para mostrar el estado Anulada.
   const facturaParaAnular = await emitirFactura(
     sesionPablo,
     {

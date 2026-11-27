@@ -55,7 +55,6 @@ body {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* Al imprimir un comprobante o recibo, ocultamos el panel lateral y los botones */
 @media print {
   .no-imprimir {
     display: none !important;

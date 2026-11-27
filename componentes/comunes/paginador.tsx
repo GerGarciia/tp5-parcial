@@ -1,5 +1,4 @@
 "use client";
-// Paginador que guarda "page" en la URL para que el listado se pueda recargar y compartir (sección 10.6).
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/componentes/ui/button";

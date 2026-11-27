@@ -1,4 +1,3 @@
-// GET /api/clientes/{id}/cuenta (RF-C4).
 import { NextResponse, type NextRequest } from "next/server";
 import { conSesionApi, leerParametrosUrl } from "@/lib/adaptadores";
 import { obtenerCuentaCorriente } from "@/servicios/clientes";

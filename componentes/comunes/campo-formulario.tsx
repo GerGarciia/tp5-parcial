@@ -1,5 +1,4 @@
 "use client";
-// Campo con etiqueta y mensaje de error, y campo de importe en pesos (sección 10.6).
 import * as React from "react";
 import { Label } from "@/componentes/ui/label";
 import { Input } from "@/componentes/ui/input";
@@ -34,7 +33,6 @@ export function CampoFormulario({
   );
 }
 
-// Campo para escribir importes en pesos argentinos (ej. "12500,50").
 export function CampoImporte({
   etiqueta,
   valorTexto,

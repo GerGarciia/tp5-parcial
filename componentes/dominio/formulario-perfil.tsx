@@ -1,5 +1,4 @@
 "use client";
-// Formulario para que cada usuario cambie su propia contraseña desde /perfil (RF-U5).
 import { useState } from "react";
 import { KeyRound } from "lucide-react";
 import { accionCambiarContrasena } from "@/acciones/comercial";

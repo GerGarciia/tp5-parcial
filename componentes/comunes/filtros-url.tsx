@@ -1,6 +1,4 @@
 "use client";
-// Barra de búsqueda y filtros que vive en la URL (sección 10.6),
-// de modo que cualquier listado se pueda recargar o compartir con sus filtros.
 import * as React from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Search, RotateCcw } from "lucide-react";

@@ -1,4 +1,3 @@
-// GET y POST /api/usuarios (RF-U4, solo administrador).
 import { NextResponse, type NextRequest } from "next/server";
 import { conSesionApi, leerJsonPedido, leerParametrosUrl } from "@/lib/adaptadores";
 import { crearUsuario, listarUsuarios } from "@/servicios/usuarios";

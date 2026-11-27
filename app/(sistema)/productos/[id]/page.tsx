@@ -1,4 +1,3 @@
-// Pantalla de FICHA DEL PRODUCTO con sus movimientos (/productos/[id]). RF-P4, RF-P5, RF-P6.
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
@@ -84,7 +83,6 @@ export default async function PaginaFichaProducto({ params, searchParams }: Prop
         }
       />
 
-      {/* Tarjetas de resumen del producto */}
       <Grilla className="grid-cols-1 sm:grid-cols-4">
         <Card>
           <CardHeader>
@@ -125,7 +123,6 @@ export default async function PaginaFichaProducto({ params, searchParams }: Prop
         </Card>
       </Grilla>
 
-      {/* RF-P6: Movimientos del producto */}
       <Card>
         <CardHeader>
           <CardTitle>Historial de movimientos de stock</CardTitle>

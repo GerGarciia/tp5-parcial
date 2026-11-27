@@ -1,4 +1,3 @@
-// GET /api/movimientos-stock (RF-P6).
 import { NextResponse, type NextRequest } from "next/server";
 import { conSesionApi, leerParametrosUrl } from "@/lib/adaptadores";
 import { listarMovimientosStock } from "@/servicios/stock";

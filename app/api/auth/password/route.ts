@@ -1,5 +1,3 @@
-// PUT /api/auth/password (RF-U5).
-// Permite al usuario autenticado cambiar su propia contraseña.
 import { NextResponse, type NextRequest } from "next/server";
 import { conSesionApi, leerJsonPedido } from "@/lib/adaptadores";
 import { cambiarContrasena } from "@/servicios/autenticacion";

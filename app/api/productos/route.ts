@@ -1,4 +1,3 @@
-// GET y POST /api/productos (RF-P1 y RF-P2).
 import { NextResponse, type NextRequest } from "next/server";
 import { conSesionApi, leerJsonPedido, leerParametrosUrl } from "@/lib/adaptadores";
 import { crearProducto, listarProductos } from "@/servicios/productos";

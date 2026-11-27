@@ -1,6 +1,4 @@
 "use client";
-// Modales de alta y edición de clientes, baja lógica y registro de pagos en cuenta corriente
-// (RF-C2, RF-C5, RF-C7).
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Plus, Pencil, Banknote, Power } from "lucide-react";
@@ -39,7 +37,6 @@ import { ModalConfirmacion } from "@/componentes/comunes/confirmar-accion";
 import { Alinear, Apilar, Grilla, Texto } from "@/componentes/primitivas/maquetacion";
 import type { ClientePublico } from "@/servicios/clientes";
 
-// ---------- Alta de cliente ----------
 export function BotonNuevoCliente({
   alCrear,
   textoBoton = "Nuevo cliente",
@@ -211,7 +208,6 @@ export function BotonNuevoCliente({
   );
 }
 
-// ---------- Registrar pago en cuenta corriente (RF-C5) ----------
 export function BotonRegistrarPago({ cliente }: { cliente: ClientePublico }) {
   const router = useRouter();
   const [abierto, setAbierto] = useState(false);
@@ -312,7 +308,6 @@ export function BotonRegistrarPago({ cliente }: { cliente: ClientePublico }) {
   );
 }
 
-// ---------- Edición y Baja lógica del cliente ----------
 export function BotonesEditarCliente({ cliente }: { cliente: ClientePublico }) {
   const [modalEditar, setModalEditar] = useState(false);
   const [modalBaja, setModalBaja] = useState(false);

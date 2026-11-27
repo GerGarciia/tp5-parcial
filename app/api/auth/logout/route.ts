@@ -1,5 +1,3 @@
-// POST /api/auth/logout (RF-U1).
-// Cierra la sesión borrando la cookie httpOnly y responde 204.
 import { NextResponse } from "next/server";
 import { conSesionApi } from "@/lib/adaptadores";
 import { NOMBRE_COOKIE_SESION } from "@/lib/sesion";

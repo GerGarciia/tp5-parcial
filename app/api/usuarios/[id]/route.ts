@@ -1,4 +1,3 @@
-// PATCH /api/usuarios/{id} (RF-U4, solo administrador).
 import { NextResponse, type NextRequest } from "next/server";
 import { conSesionApi, leerJsonPedido } from "@/lib/adaptadores";
 import { editarUsuario } from "@/servicios/usuarios";

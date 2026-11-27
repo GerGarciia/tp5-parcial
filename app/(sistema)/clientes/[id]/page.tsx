@@ -1,7 +1,3 @@
-// Pantalla de FICHA DEL CLIENTE y CUENTA CORRIENTE (/clientes/[id]). RF-C3, RF-C4, RF-C5.
-// - Muestra datos del cliente, saldo actual, límite de crédito y crédito disponible.
-// - Pestaña "Cuenta corriente": movimientos en orden cronológico con saldo acumulado renglón a renglón.
-// - Pestaña "Últimas facturas": las últimas facturas emitidas al cliente.
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Eye } from "lucide-react";
@@ -83,7 +79,6 @@ export default async function PaginaFichaCliente({ params, searchParams }: Props
         }
       />
 
-      {/* Resumen financiero del cliente */}
       <Grilla className="grid-cols-1 sm:grid-cols-4">
         <Card>
           <CardHeader>
@@ -139,7 +134,6 @@ export default async function PaginaFichaCliente({ params, searchParams }: Props
         </Card>
       </Grilla>
 
-      {/* Pestañas Cuenta corriente / Últimas facturas (sección 4) */}
       <Alinear className="gap-2 border-b border-border pb-2">
         <Link href={`/clientes/${cliente.id}?vista=cuenta`}>
           <Button variant={pestana === "cuenta" ? "default" : "ghost"} size="sm">

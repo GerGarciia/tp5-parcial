@@ -1,4 +1,3 @@
-// GET y POST /api/categorias (RF-P7).
 import { NextResponse, type NextRequest } from "next/server";
 import { conSesionApi, leerJsonPedido, leerParametrosUrl } from "@/lib/adaptadores";
 import { crearCategoria, listarCategorias } from "@/servicios/categorias";

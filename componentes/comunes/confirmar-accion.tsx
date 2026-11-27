@@ -1,5 +1,4 @@
 "use client";
-// Diálogo reutilizable para confirmar acciones irreversibles: dar de baja, desactivar (secciones 8 y 10.6).
 import { useState } from "react";
 import {
   Dialog,

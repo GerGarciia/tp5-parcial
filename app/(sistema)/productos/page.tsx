@@ -1,6 +1,3 @@
-// Pantalla de PRODUCTOS (/productos) con dos pestañas (sección 4):
-// 1. "Catálogo": listado paginado con búsqueda, filtro por categoría y marca de bajo mínimo (RF-P1).
-// 2. "Existencias y movimientos": historial de todos los movimientos de stock (RF-P6).
 import Link from "next/link";
 import { Eye, Tags } from "lucide-react";
 import { exigirUsuarioPagina } from "@/lib/sesion";
@@ -67,7 +64,6 @@ export default async function PaginaProductos({ searchParams }: Props) {
           }
         />
 
-        {/* Pestañas Catálogo / Existencias */}
         <Alinear className="gap-2 border-b border-border pb-2">
           <Link href="/productos">
             <Button variant="ghost" size="sm">
@@ -190,7 +186,6 @@ export default async function PaginaProductos({ searchParams }: Props) {
     );
   }
 
-  // Vista por defecto: Catálogo de productos (RF-P1).
   const catalogo = await listarProductos(usuario, parametros);
 
   return (
@@ -211,7 +206,6 @@ export default async function PaginaProductos({ searchParams }: Props) {
         }
       />
 
-      {/* Pestañas Catálogo / Existencias */}
       <Alinear className="gap-2 border-b border-border pb-2">
         <Link href="/productos">
           <Button variant="default" size="sm">

@@ -1,4 +1,3 @@
-// Insignias de estado del dominio (sección 10.6).
 import { Badge } from "@/componentes/ui/badge";
 import {
   NOMBRES_FORMA_PAGO,

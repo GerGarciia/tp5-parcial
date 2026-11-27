@@ -1,4 +1,3 @@
-// Pantalla de CLIENTES (/clientes). RF-C1, RF-C2, RF-C7.
 import Link from "next/link";
 import { Eye, Wallet } from "lucide-react";
 import { exigirUsuarioPagina } from "@/lib/sesion";

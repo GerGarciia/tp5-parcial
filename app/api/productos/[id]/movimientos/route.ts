@@ -1,4 +1,3 @@
-// GET y POST /api/productos/{id}/movimientos (RF-P4, RF-P5, RF-P6).
 import { NextResponse, type NextRequest } from "next/server";
 import { conSesionApi, leerJsonPedido, leerParametrosUrl } from "@/lib/adaptadores";
 import { listarMovimientosDeProducto, registrarMovimientoManual } from "@/servicios/stock";

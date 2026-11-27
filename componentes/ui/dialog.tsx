@@ -1,5 +1,4 @@
 "use client";
-// Componente Dialog de shadcn/ui construido sobre @base-ui/react/dialog.
 import * as React from "react";
 import { Dialog as DialogPrimitive } from "@base-ui/react/dialog";
 import { X } from "lucide-react";
