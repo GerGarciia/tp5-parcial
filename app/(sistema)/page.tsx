@@ -58,7 +58,7 @@ export default async function PaginaTablero() {
     <Pagina>
       {/* encabezado del tablero con botón directo al mostrador de nueva venta */}
       <EncabezadoPagina
-        titulo="Tablero comercial"
+        titulo="Dashboard"
         subtitulo="Resumen en tiempo real de ventas, cuentas corrientes y existencias críticas"
         acciones={
           <Link href="/ventas/nueva">
