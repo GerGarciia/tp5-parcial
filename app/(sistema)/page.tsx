@@ -33,7 +33,7 @@ export default async function PaginaTablero() {
   return (
     <Pagina>
       <EncabezadoPagina
-        titulo="Dashboard"
+        titulo="Panel de inicio"
         subtitulo="Resumen en tiempo real de ventas, cuentas corrientes y existencias críticas"
         acciones={
           <Link href="/ventas/nueva">
