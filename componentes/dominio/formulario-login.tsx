@@ -87,7 +87,7 @@ export function FormularioLogin() {
 
           <Button type="submit" disabled={enviando} className="w-full mt-1">
             <LogIn className="size-4" />
-            {enviando ? "Ingresando..." : "Iniciar sesión"}
+            {enviando ? "Ingresando..." : " iniciar sesión"}
           </Button>
         </form>
 
